@@ -1,21 +1,58 @@
+//*** TO DO: Add a 'genre' tag for each book title
 const books = [
-  { title: "The Great Gatsby", author: "F. Scott Fitzgerald" },
-  { title: "To Kill a Mockingbird", author: "Harper Lee" },
-  { title: "1984", author: "George Orwell" },
-  { title: "Pride and Prejudice", author: "Jane Austen" },
-  { title: "Moby-Dick", author: "Herman Melville" },
-  { title: "The Catcher in the Rye", author: "J.D. Salinger" },
-  { title: "The Hobbit", author: "J.R.R. Tolkien" },
-  { title: "Fahrenheit 451", author: "Ray Bradbury" },
-  { title: "Jane Eyre", author: "Charlotte Brontë" },
-  { title: "Wuthering Heights", author: "Emily Brontë" },
-  { title: "Test", author: "Rafay Syed" }
+  //Nonfiction titles
+  { title: "Pride and Prejudice", author: "Jane Austen", genre: "Nonfiction", imageLink: "https://m.media-amazon.com/images/I/712P0p5cXIL._AC_UF1000,1000_QL80_.jpg"},
+  { title: "A Short History of Nearly Everything", author: "Bill Bryson", genre: "Nonfiction", imageLink: "https://upload.wikimedia.org/wikipedia/en/e/ed/Bill_bryson_a_short_history.jpg"},
+  { title: "The Diary of a Young Girl", author: "Anne Frank", genre: "Nonfiction", imageLink: "https://images.booksense.com/images/097/643/9781417643097.jpg"},
+  { title: "Outliers: The Story of Success", author: "Malcolm Gladwell", genre: "Nonfiction", imageLink: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1344266315i/3228917.jpg"},
+  { title: "Night", author: "Elie Wiesel", genre: "Nonfiction", imageLink: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1709507006i/1617.jpg"},
+  { title: "The Immortal Life of Henrietta Lacks", author: "Rebecca Skloot", genre: "Nonfiction", imageLink: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327878144i/6493208.jpg"},
+  { title: "Blink: The Power of Thinking Without Thinking", author: "Malcolm Gladwell", genre: "Nonfiction", imageLink: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1440763417i/40102.jpg"},
+  { title: "Midnight in the Garden of Good and Evil", author: "John Berendt", genre: "Nonfiction", imageLink: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1427166915i/386187.jpg"},
+  { title: "Sapiens: A Brief History of Humankind", author: "Yuval Noah Harari", genre: "Nonfiction", imageLink: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1703329310i/23692271.jpg"},
+  { title: "The God Delusion", author: "Richard Dawkins", genre: "Nonfiction", imageLink: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1347220693i/14743.jpg"},
+
+  //Fiction Titles
+  { title: "Adventures of Huckleberry Finn", author: "Mark Twain", genre: "Fiction", imageLink: "https://www.ucpress.edu/_next/image?url=https%3A%2F%2Fwebfiles.ucpress.edu%2Fcoverimage%2Fisbn13%2F9780520343641.jpg&w=1920&q=90"},
+  { title: "The God of the Woods", author: "Liz Moore", genre: "Fiction", imageLink: "https://m.media-amazon.com/images/I/81gHfeKi+9L.jpg"},
+  { title: "Fourth Wing", author: "Rebecca Yarros", genre: "Fiction", imageLink: "https://m.media-amazon.com/images/I/71bXcusLgJL.jpg"},
+  { title: "The God of the Woods", author: "Liz Moore", genre: "Fiction", imageLink: ""}
+  
+
+  //Horror Titles
+
+  //Mystery Titles
+
+  //Romance Titles
+  
 ];
 
-// Render books dynamically into the DOM
+//Render books dynamically into the DOM
 function renderBooks(bookList) {
   const container = document.getElementById("bookContainer");
   container.innerHTML = ""; 
+
+  //Creates div containers for each genre and appends them to the container
+  const genresList = ["Nonfiction", "Fiction", "Horror", "Mystery", "Romance"];
+  const genreContainers = {};
+
+  genresList.forEach(genre => {
+    const genreContainer = document.createElement("div");
+    genreContainer.className = "genre-container";
+    //The ID of each container is the genre it displays
+    genreContainer.id = genre;
+
+    //Adds the proper heading to the div
+    const genreHeading = document.createElement("h3");
+    genreHeading.textContent = `${genre} Titles:`;
+    genreContainer.appendChild(genreHeading);
+
+    //Add the genre container to the main container
+    container.appendChild(genreContainer);
+
+    //Store the container for later use
+    genreContainers[genre] = genreContainer;
+  });
 
   bookList.forEach(book => {
     const col = document.createElement("div");
@@ -24,39 +61,44 @@ function renderBooks(bookList) {
     const card = document.createElement("div");
     card.className = "book card h-100 p-3 border border-2";
 
+    //Image of the book
+    const imgEl = document.createElement("img");
+    imgEl.src = book.imageLink;       
+    imgEl.alt = book.title;
+    imgEl.height = 250;
+    imgEl.width = 164;
+
+    //Title of the book (anchor element, clickable)
     const titleEl = document.createElement("h2");
     const link = document.createElement("a");
     link.href = "#";
     link.textContent = book.title;
     titleEl.appendChild(link);
 
+    //Author of the book
     const authorEl = document.createElement("p");
     authorEl.className = "card-text";
     authorEl.textContent = `by ${book.author}`;
 
+    //Adds the image, title, and author of the book to the card
+    card.appendChild(imgEl);
     card.appendChild(titleEl);
     card.appendChild(authorEl);
+
     col.appendChild(card);
-    container.appendChild(col);
+
+    //Appends the 'col' element to the appropriate genre container
+    const genreContainer = genreContainers[book.genre];
+    genreContainer.appendChild(col);
   });
 }
+
 
 // Filter books by search input
 function filterBooks(query) {
   return books.filter(book =>
     book.title.toLowerCase().includes(query.toLowerCase())
   );
-}
-
-// Highlight long titles
-function highlightLongTitles() {
-  const cards = document.querySelectorAll(".book");
-  cards.forEach(card => {
-    const title = card.querySelector("h2").textContent;
-    if (title.length > 20) {
-      card.classList.add("border-danger");
-    }
-  });
 }
 
 // Reset border styling
@@ -83,7 +125,4 @@ document.addEventListener("DOMContentLoaded", () => {
     searchInput.value = "";
     renderBooks(books);
   });
-
-  highlightButton.addEventListener("click", highlightLongTitles);
-  resetButton.addEventListener("click", resetBorders);
 });
