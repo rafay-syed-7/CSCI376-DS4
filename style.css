@@ -84,7 +84,7 @@ body {
   }
   
   .col {
-    height: 400px;
+    height: 400;
     width: 250px;
     display: flex;
     justify-content: center;
@@ -106,7 +106,7 @@ body {
     display: flex;
     height: 70px;
     width: 400px;
-    transform: rotate(270deg); /* Rotates the text 90 degrees */
+    transform: rotate(270deg); /* Rotates the text on its side */
     align-self: center;
     white-space: nowrap;
     justify-content: center;
