@@ -5,6 +5,7 @@ body {
 }
 
 header {
+  background-color: olive !important;
   text-align: center;
   padding: 10px;
 }
@@ -45,6 +46,7 @@ footer {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: none !important;
   padding: 15px;
   width: 200px;
   flex: 0 0 auto; /* horizontal scroll */
@@ -154,6 +156,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: 410px;
+  
 }
 
 
@@ -170,23 +173,10 @@ footer {
   scrollbar-color: #aaa transparent;
 }
 
-.btn-outline-white {
-  color: white;
-  border: 1px solid white;
-}
-
-.btn-outline-white:hover {
-  background-color: white;
-  color: black;
-}
-
-.searchbar {
-  right: 0%;
-  width: 50%;
-  /* position: relative; */
-  /* float: right; */
-}
-
-html {
-  scroll-behavior: smooth;
+.card-text {
+  margin: auto; 
+  display: flex; 
+  justify-self: center;
+  align-self: center;
+  flex-wrap: wrap;
 }
