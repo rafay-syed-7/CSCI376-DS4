@@ -6,17 +6,16 @@ export const books = [
       summary: "A witty and romantic novel following Elizabeth Bennet as she navigates love, class, and misunderstandings in 19th-century England, particularly with the proud yet intriguing Mr. Darcy.",
       imageLink: "https://m.media-amazon.com/images/I/712P0p5cXIL._AC_UF1000,1000_QL80_.jpg"
     },
-    { title: "A Short History of Nearly Everything", 
-      author: "Bill Bryson", 
+    { title: "Educated", 
+      author: "Tara Westover", 
       genre: "Nonfiction", 
-      summary: "A humorous and engaging exploration of science and the universe, where Bryson explains everything from the Big Bang to the rise of humans, making complex topics accessible and entertaining.",
-      imageLink: "https://upload.wikimedia.org/wikipedia/en/e/ed/Bill_bryson_a_short_history.jpg"
+      imageLink: "https://m.media-amazon.com/images/I/71-4MkLN5jL.jpg"
     },
     { 
-      title: "The Diary of a Young Girl", 
-      author: "Anne Frank", 
+      title: "Cultish", 
+      author: "Amanda Montell", 
       genre: "Nonfiction", 
-      imageLink: "https://images.booksense.com/images/097/643/9781417643097.jpg"
+      imageLink: "https://m.media-amazon.com/images/I/814R5DhyaiL._AC_UF1000,1000_QL80_DpWeblab_.jpg"
     },
     { title: "Outliers: The Story of Success", 
       author: "Malcolm Gladwell", 

@@ -16,15 +16,31 @@ function renderBooks(bookList) {
     genreContainer.id = genre;
 
     //Adds the proper heading to the div
-    const genreHeading = document.createElement("h3");
-    genreHeading.textContent = `${genre}`;
-    genreContainer.appendChild(genreHeading);
+    // const genreHeading = document.createElement("h3");
+    // genreHeading.textContent = `${genre}`;
+    // genreContainer.appendChild(genreHeading);
+    
+    //creates a labelHeading div and addes the genre to it
+    const labelHeading = document.createElement("div")
+    labelHeading.className = "genre-label";
 
-    //Add the genre container to the main container
-    container.appendChild(genreContainer);
+    const genreHeading = document.createElement("h3");
+    genreHeading.textContent = genre; 
+    labelHeading.appendChild(genreHeading);
+
+    //creates a book card container, for each of the books in the genre
+    const bookGrid = document.createElement("h3");
+    bookGrid.className = "book-grid"
+
+    //Add each container to the genre container
+    genreContainer.appendChild(labelHeading);
+    genreContainer.appendChild(bookGrid);
 
     //Store the container for later use
-    genreContainers[genre] = genreContainer;
+    genreContainers[genre] = bookGrid;
+
+    //add container to main container
+    container.appendChild(genreContainer);
   });
 
   bookList.forEach(book => {
@@ -43,6 +59,7 @@ function renderBooks(bookList) {
 
     //Title of the book (anchor element, clickable)
     const titleEl = document.createElement("h2");
+    titleEl.className = "book-title";
     const link = document.createElement("a");
     link.href = "#";
     link.textContent = book.title;
