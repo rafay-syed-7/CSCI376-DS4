@@ -169,3 +169,24 @@ footer {
   scrollbar-width: thin;
   scrollbar-color: #aaa transparent;
 }
+
+.btn-outline-white {
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-outline-white:hover {
+  background-color: white;
+  color: black;
+}
+
+.searchbar {
+  right: 0%;
+  width: 50%;
+  /* position: relative; */
+  /* float: right; */
+}
+
+html {
+  scroll-behavior: smooth;
+}

@@ -106,6 +106,15 @@ function filterBooks(query) {
   );
 }
 
+function scrollWithOffset(event, id) {
+  event.preventDefault();
+  const yOffset = 70;
+  const element = document.getElementById(id);
+  const y = element.getBoundingClientRect().top + window.scrollY - yOffset;
+
+  window.scrollTo({ top: y, behavior: 'smooth' });
+}
+
 // Reset border styling
 function resetBorders() {
   const cards = document.querySelectorAll(".book");

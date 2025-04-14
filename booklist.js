@@ -69,11 +69,6 @@ export const books = [
       genre: "Fiction", 
       imageLink: "https://m.media-amazon.com/images/I/71bXcusLgJL.jpg"
     },
-    { title: "The God of the Woods", 
-      author: "Liz Moore", 
-      genre: "Fiction", 
-      imageLink: "https://m.media-amazon.com/images/I/81gHfeKi+9L.jpg"
-    },
     {
         title: "Project Hail Mary",
         author: "Andy Weir",

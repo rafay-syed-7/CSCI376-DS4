@@ -8,25 +8,34 @@
   <link href="style.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-  <header class="bg-primary text-white p-4 mb-4">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-      <h1 class="mb-3 mb-md-0">Book Catalog</h1>
-      <nav>
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Categories</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
-        </ul>
-      </nav>
+  <header class="bg-primary text-white p-4 mb-4 sticky-top">
+    <h1 class="mb-3 mb-md-0">Book Catalog</h1>
+    <div class="d-inline-flex w-100">
+      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <nav>
+          <ul class="nav">
+            <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#Nonfiction" onclick="scrollWithOffset(event, 'Nonfiction')">Nonfiction</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#Fiction">Fiction</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#Horror">Horror</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#Mystery">Mystery</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#Romance">Romance</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="input-group searchbar">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search for a book title...">
+        <button class="btn btn-outline-white" id="clearButton">Clear</button>
+      </div>
+
     </div>
   </header>
   
   <main class="container-fluid">
-    <div class="input-group mb-4">
+    <!-- <div class="input-group mb-4">
       <input type="text" id="searchInput" class="form-control" placeholder="Search for a book title...">
       <button class="btn btn-outline-primary" id="clearButton">Clear</button>
-    </div>
+    </div> -->
 
     <!-- 
     <div class="d-flex justify-content-center flex-wrap gap-3 my-4">
@@ -37,7 +46,7 @@
 <!-- 
     <div id="bookContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     </div> -->
-    <div id = "bookContainer"> </div>
+    <div id="bookContainer"> </div>
   </main>
   <footer class="bg-dark text-white text-center py-3 mt-5">
     <p class="mb-0">&copy; 2023 Book Catalog Inc.</p>
