@@ -154,6 +154,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: 410px;
+  
 }
 
 
@@ -168,4 +169,12 @@ footer {
   padding-bottom: 10px;
   scrollbar-width: thin;
   scrollbar-color: #aaa transparent;
+}
+
+.card-text {
+  margin: auto; 
+  display: flex; 
+  justify-self: center;
+  align-self: center;
+  flex-wrap: wrap;
 }

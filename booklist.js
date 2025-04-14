@@ -174,7 +174,7 @@ export const books = [
     },
     {
         title: "House of Leaves",
-        author: "Mark Z. Danielewski",
+        author: "Mark Danielewski",
         genre: "Horror",
         imageLink: "https://m.media-amazon.com/images/I/61yArGR8YkL.jpg"
     },

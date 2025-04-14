@@ -61,14 +61,13 @@ function renderBooks(bookList) {
     const titleEl = document.createElement("h2");
     titleEl.className = "book-title";
     const link = document.createElement("a");
-    link.href = "#";
     link.textContent = book.title;
     titleEl.appendChild(link);
 
     //Author of the book
     const authorEl = document.createElement("p");
     authorEl.className = "card-text";
-    authorEl.textContent = `by ${book.author}`;
+    authorEl.innerHTML = `<p><i style='font-weight: 175'>by ${book.author}</i></p>`;
 
     //overlay for the summary
     const overlay = document.createElement("div");
@@ -79,7 +78,11 @@ function renderBooks(bookList) {
 
     //summary 
     const summary = document.createElement("summary");
-    summary.textContent = fakeSummary;
+    summary.innerHTML = `
+      <h2><a href="#">${book.title}</a></h2>
+      <p>by ${book.author}</p>
+      <summary>${fakeSummary}</summary>
+    `;
 
     //adds summary to overlayContent
     overlayContent.append(summary);
