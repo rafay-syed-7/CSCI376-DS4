@@ -48,7 +48,7 @@ function renderBooks(bookList) {
     col.className = "col";
 
     const card = document.createElement("div");
-    card.className = "book card h-100 p-3 border border-2";
+    card.className = "book card h-100 p-3";
 
     //Image of the book
     const imgEl = document.createElement("img");
