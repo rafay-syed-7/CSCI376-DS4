@@ -7,9 +7,78 @@ function renderBooks(bookList) {
 
   //Creates div containers for each genre and appends them to the container
   const genresList = ["Nonfiction", "Fiction", "Horror", "Mystery", "Romance"];
+  const genreContainers = createGenreContainers(container, genresList);
+
+  //creates the book card
+  bookList.forEach(book => {
+    const bookCard = createBookCard(book);
+    const genreContainer = genreContainers[book.genre];
+    genreContainer.appendChild(bookCard);
+  });
+}
+
+//helper function for creating all the book cards
+function createBookCard(book) {
+  const col = document.createElement("div");
+  col.className = "col";
+
+  const card = document.createElement("div");
+  card.className = "book card h-100 p-3";
+
+  // Book image
+  const imgEl = document.createElement("img");
+  imgEl.className = "img";
+  imgEl.src = book.imageLink;
+  imgEl.alt = book.title;
+
+  // Book title
+  const titleEl = document.createElement("h2");
+  titleEl.className = "book-title";
+  const link = document.createElement("a");
+  link.textContent = book.title;
+  link.href = "#"; //check
+  titleEl.appendChild(link);
+
+  // Book author
+  const authorEl = document.createElement("p");
+  authorEl.className = "card-text";
+  authorEl.textContent = `by ${book.author}`;
+
+  //overlay for the summary
+  const overlay = document.createElement("div");
+  overlay.className = "book-overlay";
+
+  //overlay content (the summary)
+  const overlayContent = document.createElement("div");
+
+  //summary 
+  const summary = document.createElement("summary");
+  summary.innerHTML = `
+    <h2><a href="#">${book.title}</a></h2>
+    <p>by ${book.author}</p>
+    <summary>${fakeSummary}</summary>
+  `;
+
+  //adds summary to overlayContent
+  overlayContent.append(summary);
+  overlay.appendChild(overlayContent);
+
+  // Assemble card
+  card.appendChild(imgEl);
+  card.appendChild(titleEl);
+  card.appendChild(authorEl);
+  card.appendChild(overlay);
+
+  col.appendChild(card);
+
+  return col;
+}
+
+//helper function for render books to create the genre containers
+function createGenreContainers(container, genreList) {
   const genreContainers = {};
 
-  genresList.forEach(genre => {
+  genreList.forEach(genre => {
     const genreContainer = document.createElement("div");
     genreContainer.className = "genre-container";
     //The ID of each container is the genre it displays
@@ -42,64 +111,7 @@ function renderBooks(bookList) {
     //add container to main container
     container.appendChild(genreContainer);
   });
-
-  bookList.forEach(book => {
-    const col = document.createElement("div");
-    col.className = "col";
-
-    const card = document.createElement("div");
-    card.className = "book card h-100 p-3";
-
-    //Image of the book
-    const imgEl = document.createElement("img");
-    imgEl.src = book.imageLink;       
-    imgEl.alt = book.title;
-    imgEl.height = 250;
-    imgEl.width = 164;
-
-    //Title of the book (anchor element, clickable)
-    const titleEl = document.createElement("h2");
-    titleEl.className = "book-title";
-    const link = document.createElement("a");
-    link.textContent = book.title;
-    titleEl.appendChild(link);
-
-    //Author of the book
-    const authorEl = document.createElement("p");
-    authorEl.className = "card-text";
-    authorEl.innerHTML = `<p><i style='font-weight: 175'>by ${book.author}</i></p>`;
-
-    //overlay for the summary
-    const overlay = document.createElement("div");
-    overlay.className = "book-overlay";
-
-    //overlay content (the summary)
-    const overlayContent = document.createElement("div");
-
-    //summary 
-    const summary = document.createElement("summary");
-    summary.innerHTML = `
-      <h2><a href="#">${book.title}</a></h2>
-      <p>by ${book.author}</p>
-      <summary>${fakeSummary}</summary>
-    `;
-
-    //adds summary to overlayContent
-    overlayContent.append(summary);
-    overlay.appendChild(overlayContent);
-
-    //Adds the image, title, overlay, and author of the book to the card
-    card.appendChild(imgEl);
-    card.appendChild(titleEl);
-    card.appendChild(authorEl);
-    card.appendChild(overlay);
-
-    col.appendChild(card);
-
-    //Appends the 'col' element to the appropriate genre container
-    const genreContainer = genreContainers[book.genre];
-    genreContainer.appendChild(col);
-  });
+  return genreContainers;
 }
 
 // Filter books by search input

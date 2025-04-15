@@ -120,6 +120,11 @@ footer {
   cursor: default;
 }
 
+.img {
+  height: 250px;
+  width: 164px;
+}
+
 /* Genre */
 
 .genre-container {
@@ -199,6 +204,8 @@ html {
   justify-self: center;
   align-self: center;
   flex-wrap: wrap;
+  font-weight: 200;
+  font-style: italic;
 }
 
 .card-text {
