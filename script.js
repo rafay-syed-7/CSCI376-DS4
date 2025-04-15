@@ -52,7 +52,6 @@ function createBookCard(book) {
   titleEl.className = "book-title";
   const link = document.createElement("a");
   link.textContent = book.title;
-  link.href = "#"; //check
   titleEl.appendChild(link);
 
   // Book author

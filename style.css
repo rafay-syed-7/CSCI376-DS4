@@ -106,7 +106,7 @@ footer {
   align-items: center;
   text-align: center;
   opacity: 0;
-  padding: 15px;
+  padding: 20px;
   padding-top: 40px;
   transition: opacity 0.3s ease;
   overflow-x: scroll;
