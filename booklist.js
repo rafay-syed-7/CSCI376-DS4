@@ -42,7 +42,7 @@ export const books = [
       author: "John Berendt", genre: "Nonfiction", 
       imageLink: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1427166915i/386187.jpg"
     },
-    { title: "Sapiens: A Brief History of Humankind", 
+    { title: "Sapiens", 
       author: "Yuval Noah Harari", 
       genre: "Nonfiction", 
       imageLink: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1703329310i/23692271.jpg"

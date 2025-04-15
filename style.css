@@ -108,6 +108,7 @@ footer {
   opacity: 0;
   padding: 20px;
   transition: opacity 0.3s ease;
+  overflow-x: scroll;
 }
 
 .book.card:hover .book-overlay {

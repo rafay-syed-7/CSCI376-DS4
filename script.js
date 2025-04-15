@@ -73,7 +73,7 @@ function createBookCard(book) {
   const summary = document.createElement("summary");
   summary.innerHTML = `
     <h2><a href="#">${book.title}</a></h2>
-    <p>by ${book.author}</p>
+    <p> <i> by ${book.author} </i> </p>
     <summary>${fakeSummary}</summary>
   `;
 
