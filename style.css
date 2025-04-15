@@ -131,7 +131,7 @@ footer {
   gap: 20px;
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  width: 85%;
+  width: 95%;
   max-width: none;
 }
 
@@ -162,15 +162,43 @@ footer {
 
 /* Book Grid, for scrolling */
 
+
 .book-grid {
   display: flex;
-  flex-wrap: nowrap; /* Horizontal layout */
-  overflow-x: auto;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-x: scroll;
   gap: 20px;
-  flex: 1;
   padding-bottom: 10px;
   scrollbar-width: thin;
   scrollbar-color: #aaa transparent;
+}
+
+
+.btn-outline-white {
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-outline-white:hover {
+  background-color: white;
+  color: black;
+}
+
+.searchbar {
+  right: 0%;
+  width: 50%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.card-text {
+  margin: auto; 
+  display: flex; 
+  justify-self: center;
+  align-self: center;
+  flex-wrap: wrap;
 }
 
 .card-text {

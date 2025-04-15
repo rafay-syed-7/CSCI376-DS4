@@ -111,12 +111,14 @@ function filterBooks(query) {
 
 function scrollWithOffset(event, id) {
   event.preventDefault();
-  const yOffset = 70;
+  const headerOffset = document.querySelector('header').offsetHeight;
   const element = document.getElementById(id);
-  const y = element.getBoundingClientRect().top + window.scrollY - yOffset;
+  const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+  const offsetPosition = elementPosition - headerOffset - 15;
 
-  window.scrollTo({ top: y, behavior: 'smooth' });
+  window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
 }
+
 
 // Reset border styling
 function resetBorders() {
@@ -125,13 +127,12 @@ function resetBorders() {
 }
 
 // Setup event listeners
+// existing DOMContentLoaded setup...
 document.addEventListener("DOMContentLoaded", () => {
   renderBooks(books);
 
   const searchInput = document.getElementById("searchInput");
   const clearButton = document.getElementById("clearButton");
-  const highlightButton = document.getElementById("highlightButton");
-  const resetButton = document.getElementById("resetButton");
 
   searchInput.addEventListener("input", () => {
     const filtered = filterBooks(searchInput.value);
@@ -141,5 +142,12 @@ document.addEventListener("DOMContentLoaded", () => {
   clearButton.addEventListener("click", () => {
     searchInput.value = "";
     renderBooks(books);
+  });
+
+
+  const navLinks = document.querySelectorAll(".nav-link[href^='#']");
+  navLinks.forEach(link => {
+    const id = link.getAttribute("href").substring(1);
+    link.addEventListener("click", event => scrollWithOffset(event, id));
   });
 });
