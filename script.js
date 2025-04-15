@@ -20,8 +20,6 @@ function renderBooks(bookList, showGenres = true) {
   }
   //show the flat layout (for when users use the search function)
   else {
-    console.log("Rendering in flat mode");
-
     const flatGrid = document.createElement("div");
     flatGrid.className = "book-grid flat";
 
