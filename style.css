@@ -167,7 +167,6 @@ footer {
 
 /* Book Grid, for scrolling */
 
-
 .book-grid {
   display: flex;
   flex-wrap: nowrap;
@@ -177,6 +176,15 @@ footer {
   padding-bottom: 10px;
   scrollbar-width: thin;
   scrollbar-color: #aaa transparent;
+}
+
+.book-grid.flat {
+  display: flex;
+  flex-wrap: wrap;       
+  justify-content: flex-start;
+  overflow-x: hidden;      
+  gap: 20px;
+  padding: 20px;
 }
 
 

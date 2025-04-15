@@ -1,20 +1,38 @@
 import { books, fakeSummary } from './booklist.js';
 
 //Render books dynamically into the DOM
-function renderBooks(bookList) {
+function renderBooks(bookList, showGenres = true) {
   const container = document.getElementById("bookContainer");
   container.innerHTML = ""; 
 
-  //Creates div containers for each genre and appends them to the container
-  const genresList = ["Nonfiction", "Fiction", "Horror", "Mystery", "Romance"];
-  const genreContainers = createGenreContainers(container, genresList);
+  //the books should be grouped by genre
+  if(showGenres) {
+    //Creates div containers for each genre and appends them to the container
+    const genresList = ["Nonfiction", "Fiction", "Horror", "Mystery", "Romance"];
+    const genreContainers = createGenreContainers(container, genresList);
 
-  //creates the book card
-  bookList.forEach(book => {
-    const bookCard = createBookCard(book);
-    const genreContainer = genreContainers[book.genre];
-    genreContainer.appendChild(bookCard);
-  });
+    //creates the book cards themselves
+    bookList.forEach(book => {
+      const bookCard = createBookCard(book);
+      const genreContainer = genreContainers[book.genre];
+      genreContainer.appendChild(bookCard);
+    });
+  }
+  //show the flat layout (for when users use the search function)
+  else {
+    console.log("Rendering in flat mode");
+
+    const flatGrid = document.createElement("div");
+    flatGrid.className = "book-grid flat";
+
+    //create the book cards
+    bookList.forEach(book => {
+      const bookCard = createBookCard(book);
+      flatGrid.appendChild(bookCard);
+    });
+
+    container.append(flatGrid);
+  }
 }
 
 //helper function for creating all the book cards
@@ -121,6 +139,20 @@ function filterBooks(query) {
   );
 }
 
+function search() {
+  const searchInput = document.getElementById("searchInput");
+
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.trim();
+    if (query === "") {
+      renderBooks(books, true);  // Show genres
+    } else {
+      const filteredBooks = filterBooks(query);
+      renderBooks(filteredBooks, false); // Flat layout
+    }
+  });
+}
+
 function scrollWithOffset(event, id) {
   event.preventDefault();
   const headerOffset = document.querySelector('header').offsetHeight;
@@ -132,24 +164,14 @@ function scrollWithOffset(event, id) {
 }
 
 
-// Reset border styling
-function resetBorders() {
-  const cards = document.querySelectorAll(".book");
-  cards.forEach(card => card.classList.remove("border-danger"));
-}
-
 // Setup event listeners
 // existing DOMContentLoaded setup...
 document.addEventListener("DOMContentLoaded", () => {
   renderBooks(books);
+  search();
 
   const searchInput = document.getElementById("searchInput");
   const clearButton = document.getElementById("clearButton");
-
-  searchInput.addEventListener("input", () => {
-    const filtered = filterBooks(searchInput.value);
-    renderBooks(filtered);
-  });
 
   clearButton.addEventListener("click", () => {
     searchInput.value = "";
