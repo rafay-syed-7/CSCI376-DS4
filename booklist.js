@@ -28,19 +28,20 @@ export const books = [
       imageLink: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1709507006i/1617.jpg"
     },
     { 
-      title: "The Immortal Life of Henrietta Lacks", 
-      author: "Rebecca Skloot", 
+      title: "Nuclear War: A Scenario", 
+      author: "Annie Jacobsen", 
       genre: "Nonfiction", 
-      imageLink: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327878144i/6493208.jpg"
+      imageLink: "https://m.media-amazon.com/images/I/81RWBdyovbL._AC_UF1000,1000_QL80_DpWeblab_.jpg"
     },
-    { title: "Blink: The Power of Thinking Without Thinking", 
-      author: "Malcolm Gladwell",
+    { title: "Spare Book", 
+      author: "Prince Harry, Duke of Sussex",
       genre: "Nonfiction", 
-      imageLink: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1440763417i/40102.jpg"
+      imageLink: "https://m.media-amazon.com/images/I/81E0qrtQKiL._AC_UF1000,1000_QL80_.jpg"
     },
-    { title: "Midnight in the Garden of Good and Evil", 
-      author: "John Berendt", genre: "Nonfiction", 
-      imageLink: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1427166915i/386187.jpg"
+    { title: "Cher: The Memoir", 
+      author: "Cher", 
+      genre: "Nonfiction", 
+      imageLink: "https://m.media-amazon.com/images/I/71wC8IAlmUL.jpg"
     },
     { title: "Sapiens", 
       author: "Yuval Noah Harari", 
@@ -138,10 +139,10 @@ export const books = [
         imageLink: "https://m.media-amazon.com/images/I/81pvjWH+4HL._AC_UF1000,1000_QL80_.jpg"
     },
     {
-        title: "The Final Girl Support Group",
-        author: "Grady Hendrix",
+        title: "Bird Box",
+        author: "Josh Malerman",
         genre: "Horror",
-        imageLink: "https://m.media-amazon.com/images/I/71-z+-TmvnL.jpg"
+        imageLink: "https://m.media-amazon.com/images/I/91jBfwPCeKL._AC_UF1000,1000_QL80_.jpg"
     },
     {
         title: "The Ruins",

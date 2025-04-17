@@ -49,7 +49,7 @@ function createBookCard(book) {
 
   // Book title
   const titleEl = document.createElement("h2");
-  titleEl.className = "book-title";
+  titleEl.className = "book-title fs-4";
   const link = document.createElement("a");
   link.textContent = book.title;
   titleEl.appendChild(link);
@@ -69,7 +69,7 @@ function createBookCard(book) {
   //summary 
   const summary = document.createElement("summary");
   summary.innerHTML = `
-    <h2><a href="#">${book.title}</a></h2>
+    <h2 style="padding-top: 30px"><a href="#">${book.title}</a></h2>
     <p> <i> by ${book.author} </i> </p>
     <summary>${fakeSummary}</summary>
   `;
