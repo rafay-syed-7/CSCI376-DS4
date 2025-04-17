@@ -34,7 +34,7 @@ export const books = [
       imageLink: "https://m.media-amazon.com/images/I/81RWBdyovbL._AC_UF1000,1000_QL80_DpWeblab_.jpg"
     },
     { title: "Spare Book", 
-      author: "Prince Harry, Duke of Sussex",
+      author: "Prince Harry",
       genre: "Nonfiction", 
       imageLink: "https://m.media-amazon.com/images/I/81E0qrtQKiL._AC_UF1000,1000_QL80_.jpg"
     },
