@@ -5,10 +5,16 @@ body {
 }
 
 header {
-  background-color: olive !important;
+  background-color: rgb(66, 66, 0) !important;
   text-align: center;
   padding: 10px;
 }
+
+.nav-link {
+  color: white;
+}
+
+
 
 nav ul {
   list-style: none;
@@ -29,7 +35,7 @@ footer {
   text-align: center;
   padding: 20px;
   font-size: 1.5rem;
-  background-color: #A9A9A9;
+  background-color: #646464;
 }
 
 .col {

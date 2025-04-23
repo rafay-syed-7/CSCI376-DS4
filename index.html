@@ -14,19 +14,22 @@
       <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
         <nav>
           <ul class="nav">
-            <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#Nonfiction" onclick="scrollWithOffset(event, 'Nonfiction')">Nonfiction</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#Fiction" onclick="scrollWithOffset(event, 'Fiction')">Fiction</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#Horror" onclick="scrollWithOffset(event, 'Horror')">Horror</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#Mystery" onclick="scrollWithOffset(event, 'Mystery')">Mystery</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#Romance" onclick="scrollWithOffset(event, 'Romance')">Romance</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#Nonfiction" onclick="scrollWithOffset(event, 'Nonfiction')">Nonfiction</a></li>
+            <li class="nav-item"><a class="nav-link" href="#Fiction" onclick="scrollWithOffset(event, 'Fiction')">Fiction</a></li>
+            <li class="nav-item"><a class="nav-link" href="#Horror" onclick="scrollWithOffset(event, 'Horror')">Horror</a></li>
+            <li class="nav-item"><a class="nav-link" href="#Mystery" onclick="scrollWithOffset(event, 'Mystery')">Mystery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#Romance" onclick="scrollWithOffset(event, 'Romance')">Romance</a></li>
           </ul>
         </nav>
+      <div class="searchbar mb-2">
+        <label for="searchInput" class="form-label">Search Bar</label>
+        <div class="input-group">
+          <input type="text" id="searchInput" class="form-control" placeholder="Search for a book title...">
+          <button class="btn btn-outline-white" id="clearButton">Clear</button>
+        </div>
       </div>
-      <div class="input-group searchbar">
-        <input type="text" id="searchInput" class="form-control" placeholder="Search for a book title...">
-        <button class="btn btn-outline-white" id="clearButton">Clear</button>
-      </div>
+        
 
     </div>
   </header>
